@@ -8,7 +8,7 @@ export default function MemberRepos({ onClose, login }){
         fetchRepos(login).then((response) => {
             setRepos(response);
         })
-    }, []);
+    }, [login]);
     return createPortal(
         <>
           <div className="modal-backdrop show"></div>
@@ -30,9 +30,9 @@ export default function MemberRepos({ onClose, login }){
                 <div className="modal-body">
                     {repos && repos.map((repo) => {
                         return (<div key={repo.id}>
-                                    <a href={`${repo.html_url}`} target="_blank">{repo.name}</a>
+                                    <a href={`${repo.html_url}`} target="_blank" rel="noopener noreferrer">{repo.name}</a>
                                     <br></br>
-                                    <a href={`${repo.description}`} target="_blank">Description</a>
+                                    <a href={`${repo.description}`} target="_blank" rel="noopener noreferrer">Description</a>
                                 </div>
                                 )
                     })}

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import { fetchFavorites } from './httpRequests'
+import React from 'react'
 
 export default function Members({ members, showMemberModal, showReposModal, follow, unfollow, favorites }){
     return (members.map((member) => {
@@ -10,7 +9,7 @@ export default function Members({ members, showMemberModal, showReposModal, foll
                 }}>{member.login}</p>
               <img src={member.avatar_url} onClick={() => {
                 showMemberModal(member.login);
-                }}/>
+                }} alt="Avatar"/>
                 <br></br>
                 <button onClick={() => {
                     showReposModal(member.login);

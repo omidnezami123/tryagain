@@ -12,7 +12,7 @@ export default function MemberProfile({ onClose, login }){
             setCompany(response.company);
             setBlog(response.blog);
         })
-    }, []);
+    }, [login]);
     return createPortal(
         <>
           <div className="modal-backdrop show"></div>
